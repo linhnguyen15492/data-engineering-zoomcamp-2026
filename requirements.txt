@@ -1,3 +1,7 @@
 numpy
 pandas
 apache-airflow-providers-google
+sqlalchemy
+psycopg2-binary
+tqdm
+scikit-learn

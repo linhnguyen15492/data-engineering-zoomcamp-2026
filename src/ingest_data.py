@@ -9,8 +9,8 @@ MONTHS = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"
 YEARS = ["2020"]
 TAXI_TYPES = ["green", "yellow"]
 
-URL = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download'
-dir = '../data'
+URL = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download"
+dir = "../data"
 
 
 def download_file(url, local_path):
@@ -22,8 +22,8 @@ def download_file(url, local_path):
 
 
 def unzip_file(gz_path, out_path):
-    with gzip.open(gz_path, 'rb') as f_in:
-        with open(out_path, 'wb') as f_out:
+    with gzip.open(gz_path, "rb") as f_in:
+        with open(out_path, "wb") as f_out:
             shutil.copyfileobj(f_in, f_out)
 
 
@@ -54,14 +54,23 @@ def count_rows():
         print(f"Total rows for {taxi}:", total_rows)
 
 
-taxi = 'yellow'
-year = '2021'
-month = '03'
-input_url = f'{URL}/{taxi}/{taxi}_tripdata_{year}-{month}.csv.gz'
-gz_file = f"{dir}/{taxi}_tripdata_{year}-{month}.csv.gz"
-output_file = f'{dir}/{taxi}_tripdata_{year}-{month}.csv'
-download_file(input_url, gz_file)
-unzip_file(gz_file, output_file)
-file = output_file
-df = pd.read_csv(file)
-print(f"Rows in {file}:", len(df))
+def main():
+    taxi = "yellow"
+    year = "2021"
+    month = "03"
+    input_url = f"{URL}/{taxi}/{taxi}_tripdata_{year}-{month}.csv.gz"
+    gz_file = f"{dir}/{taxi}_tripdata_{year}-{month}.csv.gz"
+    output_file = f"{dir}/{taxi}_tripdata_{year}-{month}.csv"
+    download_file(input_url, gz_file)
+    unzip_file(gz_file, output_file)
+    file = output_file
+    df = pd.read_csv(file)
+    print(f"Rows in {file}:", len(df))
+
+
+def from_ingest():
+    print("This function is called from ingest_data.")
+
+
+if __name__ == "__main__":
+    main()
