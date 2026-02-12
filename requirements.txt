@@ -6,3 +6,4 @@ psycopg2-binary
 tqdm
 scikit-learn
 google-cloud-storage
+pyarrow
