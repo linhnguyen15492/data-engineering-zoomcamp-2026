@@ -7,3 +7,4 @@ tqdm
 scikit-learn
 google-cloud-storage
 pyarrow
+graphviz
