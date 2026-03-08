@@ -26,7 +26,7 @@ with DAG(
     # Simple command execution with proper error handling
     echo_task = BashOperator(
         task_id="echo_hello",
-        bash_command='echo "Hello from BashOperator!" && exit 0',
+        bash_command='echo "Hello from BashOperator!" && echo "Task completed successfully"',
         retries=2,
         retry_delay=timedelta(seconds=30),
     )
