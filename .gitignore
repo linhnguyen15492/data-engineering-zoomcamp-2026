@@ -212,3 +212,4 @@ logs/
 .credentials/
 .dbt/
 *duckdb
+*.tgz
