@@ -5,9 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "apache-airflow-providers-google>=19.5.0",
-    "dlt[workspace]>=1.22.2",
+    "apache-airflow-providers-google>=20.0.0",
     "google-cloud-storage>=3.9.0",
+    "graphviz>=0.21",
     "numpy>=2.4.2",
     "pandas>=3.0.1",
     "psycopg2-binary>=2.9.11",

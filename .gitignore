@@ -213,4 +213,5 @@ logs/
 .credentials/
 .dbt/
 *duckdb
+*.tgz
 .vscode/settings.json

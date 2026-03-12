@@ -1,4 +1,4 @@
-FROM apache/airflow:slim-3.1.8rc1
+FROM apache/airflow:3.1.7
 
 ENV AIRFLOW_HOME=/opt/airflow
 
@@ -25,10 +25,10 @@ RUN sudo apt-get update -y \
     && sudo apt-get install ca-certificates gnupg curl
 
 # Add the Google Cloud SDK repository and install the SDK
-# RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
-#     && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg \
-#     && apt-get update -y \
-#     && apt-get install google-cloud-cli -y
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+    && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg \
+    && apt-get update -y \
+    && apt-get install google-cloud-cli -y
 
 COPY scripts scripts
 RUN chmod +x scripts/*.sh
