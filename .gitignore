@@ -201,6 +201,7 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
@@ -212,3 +213,4 @@ logs/
 .credentials/
 .dbt/
 *duckdb
+.vscode/settings.json
